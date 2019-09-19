@@ -227,7 +227,7 @@ class FPNResNet(_FPN):
     _FPN.__init__(self, classes)
 
   def _init_modules(self):
-    resnet_str = f"resnet{self.num_layers}"
+    resnet_str = "resnet{}".format(self.num_layers)
     resnet = globals()[resnet_str]()
 
     if self.pretrained == True:
@@ -238,7 +238,7 @@ class FPNResNet(_FPN):
       #   resnet.load_state_dict({k:v for k,v in state_dict.items() if k in resnet.state_dict()})
       # else:
       # for other ResNets we use PyTorch pretrained weights
-      print(f"[Load] pretrained weights from {model_urls[resnet_str]}")
+      print("[Load] pretrained weights from {}".format(model_urls[resnet_str]))
 
       # change normalization and normalize between [0, 1]
       cfg.PIXEL_MEANS = 255 * np.array([[[0.485, 0.456, 0.406]]])

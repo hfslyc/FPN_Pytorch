@@ -133,7 +133,7 @@ def main():
     if not os.path.exists(input_dir):
         raise Exception('There is no input directory for loading network from ' + input_dir)
     load_name = os.path.join(
-        input_dir, f"fpn_{args.checksession}_{args.checkepoch}.pth")
+        input_dir, "fpn_{}_{}.pth".format(args.checksession, args.checkepoch))
 
     cfg_file = os.path.join(input_dir, 'config.yaml')
     cfg_from_file(cfg_file)

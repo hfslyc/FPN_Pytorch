@@ -313,7 +313,7 @@ class MOT17(imdb):
     def evaluate_detections(self, all_boxes, output_dir):
         self._write_results_file(all_boxes, output_dir)
         tp, fp, prec, rec, ap = self._python_eval(all_boxes)
-        print(f"AP: {ap} Prec: {prec} Rec: {rec} TP: {tp} FP: {fp}")
+        print("AP: {} Prec: {} Rec: {} TP: {} FP: {}".format(ap, prec, rec, tp, fp))
         return ap
 
     def _matlab_eval(self, all_boxes):

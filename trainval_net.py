@@ -275,7 +275,7 @@ if __name__ == '__main__':
         cfg_from_file(cfg_file)
 
     # load changes from current config file
-    cfg_file = f"cfgs/{args.net}{'_ls' if args.lscale else ''}.yml"
+    cfg_file = "cfgs/{}{}.yml".format(args.net, '_ls' if args.lscale else '')
     cfg_from_file(cfg_file)
 
     # load changes from set_cfg list
